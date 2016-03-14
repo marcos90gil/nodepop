@@ -6,6 +6,8 @@ let mongoose = require('mongoose');
 let Usuario = mongoose.model('Usuario');
 //let auth = require('../../../lib/auth.js'); // variable de entorno
 
+//router.use(auth('admin', 'pass')); // MIDDLEWARE de autenticación general
+
 /* Petición GET, sacar de la db CON AUTENTICACIÓN 
 router.get('/', auth('admin', 'pass'), function(req, res) {
 	
@@ -19,6 +21,16 @@ router.get('/', auth('admin', 'pass'), function(req, res) {
 	});	
 });
 */
+
+/* Petición GET con renderizado de vista */
+router.get('/view', function(req, res, next) {
+	
+	Usuario.list({}, function(err, rows) {
+		// cuando estén disponibles mando la vista
+		res.render('usuarios_view', {usuarios: rows});	
+	});
+
+});
 
 /* Petición GET, sacar de la db*/
 router.get('/', function(req, res) {

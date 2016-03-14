@@ -10,9 +10,11 @@
 	</header>
 	<% usuarios.forEach(function(usuario){
 	%>
+		<p>
 		Nombre: <%= usuario.nombre %>
 		Email: <%= usuario.email %>
 		Password: <%= usuario.clave %>
+		</p>
 	<%
 	}) %>
 </body>
