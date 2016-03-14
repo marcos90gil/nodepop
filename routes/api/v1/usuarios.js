@@ -3,7 +3,7 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-let Anuncio = mongoose.model('Anuncio');
+let Usuario = mongoose.model('Usuario');
 //let auth = require('../../../lib/auth.js'); // variable de entorno
 
 /* Petición GET, sacar de la db CON AUTENTICACIÓN 
@@ -11,7 +11,7 @@ router.get('/', auth('admin', 'pass'), function(req, res) {
 	
 	let sort = req.query.sort || 'name';
 	
-	Anuncio.list(sort, function(err, rows) {
+	Usuario.list(sort, function(err, rows) {
 		if (err) {
 			return res.json({ result: false, error: err });
 		}
@@ -25,7 +25,7 @@ router.get('/', function(req, res) {
 	
 	let sort = req.query.sort || 'name';
 	
-	Anuncio.list(sort, function(err, rows) {
+	Usuario.list(sort, function(err, rows) {
 		if (err) {
 			return res.json({ result: false, error: err });
 		}
@@ -37,10 +37,10 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
 
 	// Instanciamos objeto en memoria
-	let anuncio = new Anuncio(req.body);
+	let usuario = new Usuario(req.body);
 
 	// Guardamos en la base de datos
-	anuncio.save(function(err, newRow) {
+	usuario.save(function(err, newRow) {
 		if (err) {
 			return res.json({ result: false, error: err });
 		}
@@ -53,7 +53,7 @@ router.post('/', function(req, res) {
 router.put('/:id', function(req, res) {
 	let options = {};
 	//var options = { multi: true }; // Para actualizar varios 
-	Anuncio.update({ _id: req.params.id }, { $set: req.body }, options, function(err, data) {
+	Usuario.update({ _id: req.params.id }, { $set: req.body }, options, function(err, data) {
 		if (err) {
 			return res.json( { result: false, error: err });
 		}
@@ -64,7 +64,7 @@ router.put('/:id', function(req, res) {
 
 /* Petición DELETE ALL, eliminar todos los items*/
 router.delete('/', function(req, res) {
-	Anuncio.remove(function(err) {
+	Usuario.remove(function(err) {
 		if (err) {
 			return res.json({ result: false, error: err });
 		}

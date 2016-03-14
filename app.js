@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 // Models
 require('./models/anuncios_model.js');
+require('./models/usuarios_model.js');
 
 // Web routes
 var routes = require('./routes/index');
@@ -17,6 +18,7 @@ var conn = require('./lib/connectMongoose.js');
 
 // Api v1 routes
 var apiAnuncios = require('./routes/api/v1/anuncios.js');
+var apiUsuarios = require('./routes/api/v1/usuarios.js');
 
 // Express app
 var app = express();
@@ -38,6 +40,7 @@ app.use('/', routes);
 app.use('/users', users);
 // API V1
 app.use('/apiv1/anuncios', apiAnuncios);
+app.use('/apiv1/usuarios', apiUsuarios);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
