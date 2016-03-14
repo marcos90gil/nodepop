@@ -5,13 +5,20 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// web routes
+// Models
+require('./models/anuncios_model.js');
+
+// Web routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 // Mongoose connection
 var conn = require('./lib/connectMongoose.js');
 
+// Api v1 routes
+var apiAnuncios = require('./routes/api/v1/anuncios.js');
+
+// Express app
 var app = express();
 
 // view engine setup
@@ -26,8 +33,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// URLs generation
 app.use('/', routes);
 app.use('/users', users);
+// API V1
+app.use('/apiv1/anuncios', apiAnuncios);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
