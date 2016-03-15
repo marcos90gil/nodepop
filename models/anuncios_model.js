@@ -12,11 +12,26 @@ let anuncioSchema = mongoose.Schema({
 	tags: [String]
 });
 
-anuncioSchema.statics.list = function(sort, cb) {
+// Muestra lista según sort
+anuncioSchema.statics.list = function(sort, filters, cb) {
 	// preparamos las query sin ejecutar
-	let query = Anuncio.find({});
+	let query = Anuncio.find(filters);
 	// añadimos más parámetros a la query y ejecutamos
 	query.sort(sort);
+	query.exec(function(err, rows){
+		if (err) {
+			return cb(err);
+		}
+		return cb(null, rows);		
+	});
+};
+
+
+anuncioSchema.statics.listFiltered = function(filters, cb) {
+	// preparamos las query sin ejecutar
+	let query = Anuncio.find(filters);
+	// añadimos más parámetros a la query y ejecutamos
+	//query.sort(sort);
 	query.exec(function(err, rows){
 		if (err) {
 			return cb(err);
