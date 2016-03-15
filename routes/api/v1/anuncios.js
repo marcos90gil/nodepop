@@ -4,7 +4,9 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 let Anuncio = mongoose.model('Anuncio');
-//let auth = require('../../../lib/auth.js'); // variable de entorno
+let auth = require('../../../lib/auth.js'); // variable de entorno
+
+router.use(auth('admin', 'pass')); // MIDDLEWARE de autenticación general
 
 /* Petición GET, sacar de la db CON AUTENTICACIÓN 
 router.get('/', auth('admin', 'pass'), function(req, res) {
