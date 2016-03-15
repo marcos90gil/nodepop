@@ -8,11 +8,46 @@
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
+			"nombre": "Bicicleta",
+			"venta": true,
+			"precio": 845,
+			"foto": "bici2.jpg",
+			"tags": [ "lifestyle", "motor"]
+		},
+		{
+			"nombre": "Bicicleta",
+			"venta": true,
+			"precio": 1200,
+			"foto": "bici3.jpg",
+			"tags": [ "lifestyle", "motor"]
+		},
+		{
+			"nombre": "Bicicleta",
+			"venta": false,
+			"precio": 210,
+			"foto": "bici4.jpg",
+			"tags": [ "lifestyle", "motor"]
+		},
+		{
+			"nombre": "iPhone 6S",
+			"venta": true,
+			"precio": 650,
+			"foto": "iphone6s.jpg",
+			"tags": [ "lifestyle", "mobile"]
+		},
+		{
 			"nombre": "iPhone 3GS",
 			"venta": false,
 			"precio": 50.00,
-			"foto": "iphone.png",
+			"foto": "iphone3gs.png",
 			"tags": [ "lifestyle", "mobile"]
+		},
+		{
+			"nombre": "Moto",
+			"venta": true,
+			"precio": 1800,
+			"foto": "moto.jpg",
+			"tags": [ "lifestyle", "motor"]
 		}
 	]
 }

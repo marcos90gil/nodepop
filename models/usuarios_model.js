@@ -7,7 +7,6 @@ let mongoose = require('mongoose');
 let usuarioSchema = mongoose.Schema({
 	nombre: String,
 	email: String,
-	clave: String
 });
 
 usuarioSchema.statics.list = function(sort, cb) {
@@ -23,5 +22,7 @@ usuarioSchema.statics.list = function(sort, cb) {
 	});
 };
 
+// Añado funcionalidad para autenticación
+usuarioSchema.plugin(require('basic-auth-mongoose'));
 // Lo registro en mongoose
 let Usuario = mongoose.model('Usuario', usuarioSchema);

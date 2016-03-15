@@ -1,14 +1,14 @@
 {
 	"usuarios": [
 		{
-			"nombre": "admin",
 			"email": "admin@gmail.com",
-			"clave": "admin"		
+			"username": "admin",
+			"password": "admin"		
 		},
 		{
-			"nombre": "marcos",
 			"email": "marcos@gmail.com",
-			"clave": "marcos"
+			"username": "marcos",
+			"password": "marcos"
 		}
 	]
 }

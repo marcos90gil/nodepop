@@ -4,7 +4,7 @@ API que dará servicio a una app de venta de artículos de segunda mano, llamada
 ## Primeros pasos
 * Descargar repositorio
 * Configurar paquetes de node: `$ npm install`
-* Cargar datos de muestra: `$ npm run instal_db.js`
+* Cargar datos de muestra: `$ npm run instal-db`
 
 ## Arrancar API
 * Arrancamos la base de datos Mongo

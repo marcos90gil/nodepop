@@ -9,6 +9,7 @@ let Anuncio = mongoose.model('Anuncio');
 let Usuario = mongoose.model('Usuario');
 let fs = require('fs');
 
+// Inicialización de anuncios
 Anuncio.remove(function(err) {
 
     if (err) {
@@ -40,6 +41,7 @@ Anuncio.remove(function(err) {
 
 });
 
+// Inicialización de usuarios
 Usuario.remove(function(err) {
 
     if (err) {

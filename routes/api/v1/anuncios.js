@@ -6,6 +6,8 @@ let mongoose = require('mongoose');
 let Anuncio = mongoose.model('Anuncio');
 //let auth = require('../../../lib/auth.js'); // variable de entorno
 
+//router.use(auth()); // MIDDLEWARE de autenticación general
+
 /* Petición GET, sacar de la db CON AUTENTICACIÓN 
 router.get('/', auth('admin', 'pass'), function(req, res) {
 	
@@ -22,15 +24,33 @@ router.get('/', auth('admin', 'pass'), function(req, res) {
 
 /* Petición GET, sacar de la db*/
 router.get('/', function(req, res) {
+	//console.log(req.query);
+	let nombre = req.query.nombre || '';
+	let venta = req.query.venta || '';
+	let tags = req.query.tags || '';
+	let filters = {};
+	let sort = req.query.sort || 'nombre';
 	
-	let sort = req.query.sort || 'name';
+	if (nombre !== '') {
+		filters.nombre = nombre;
+	}
+	if (venta !== '') {
+		filters.venta = venta;
+	}
+	if (tags !== '') {
+		filters.tags = tags;
+	}
 	
-	Anuncio.list(sort, function(err, rows) {
+	console.log(sort);
+	console.log(filters);
+
+	Anuncio.list(sort, filters, function(err, rows) {
 		if (err) {
 			return res.json({ result: false, error: err });
 		}
 		return res.json({ result: true, rows: rows });	
 	});	
+
 });
 
 /* Petición POST, añadir un item */
