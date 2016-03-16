@@ -13,11 +13,13 @@ let anuncioSchema = mongoose.Schema({
 });
 
 // Muestra lista según sort
-anuncioSchema.statics.list = function(sort, filters, cb) {
+anuncioSchema.statics.list = function(filters, sort, start, lim, cb) {
 	// preparamos las query sin ejecutar
 	let query = Anuncio.find(filters);
 	// añadimos más parámetros a la query y ejecutamos
 	query.sort(sort);
+	query.skip(start);
+	query.limit(lim);
 	query.exec(function(err, rows){
 		if (err) {
 			return cb(err);
