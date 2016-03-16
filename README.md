@@ -18,6 +18,7 @@ API que dará servicio a una app de venta de artículos de segunda mano, llamada
 [Query](http://localhost:3000/apiv1/anuncios?tags=lifestyle&tags=mobile)
 
 * Las posibles queries de la API se presentan a continuación:
+
 	* nombre=bicicleta ó bici (partes de palabras)
 	* venta=true ó false
 	* tag=work, lifestyle, motor o mobile; una llamada con más de un tag se realiza por separado tags=lifestyle&tags=motor
@@ -26,3 +27,6 @@ API que dará servicio a una app de venta de artículos de segunda mano, llamada
 	* start=2 (empieza a partir del elemento 2, sirve para paginar los resultados)
 	* limit=10 (solo muestra 10 resultados, sirve para paginar los resultados)
 [Ejemplo](http://localhost:3000/apiv1/anuncios?tag=mobile&venta=true&nombre=ip&precio=50-&start=0&limit=2&sort=precio)
+
+	* select=nombre (por defecto se muestran los campos nombre, precio, venta y tags de los anuncios. Si se quieren obtener todos los campos se utiliza select=all, si se quieren campos concretos se añaden a la query select separados por espacios o '%20'. El campo id tiene un comportamiento que lo muestra por defecto con la llamada select, para evitar que salga se añade a la query '-_id')
+

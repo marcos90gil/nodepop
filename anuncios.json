@@ -2,50 +2,50 @@
 	"anuncios": [
 		{
 			"nombre": "Bicicleta",
-			"venta": true,
 			"precio": 230.15,
+			"venta": true,
 			"foto": "bici.jpg",
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
 			"nombre": "Bicicleta",
-			"venta": true,
 			"precio": 845,
+			"venta": true,
 			"foto": "bici2.jpg",
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
 			"nombre": "Bicicleta",
-			"venta": true,
 			"precio": 1200,
+			"venta": true,
 			"foto": "bici3.jpg",
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
 			"nombre": "Bicicleta",
-			"venta": false,
 			"precio": 210,
+			"venta": false,
 			"foto": "bici4.jpg",
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
 			"nombre": "iPhone 6S",
-			"venta": true,
 			"precio": 650,
+			"venta": true,
 			"foto": "iphone6s.jpg",
 			"tags": [ "lifestyle", "mobile"]
 		},
 		{
 			"nombre": "iPhone 3GS",
-			"venta": false,
 			"precio": 50.00,
+			"venta": false,
 			"foto": "iphone3gs.png",
 			"tags": [ "lifestyle", "mobile"]
 		},
 		{
 			"nombre": "Moto",
-			"venta": true,
 			"precio": 1800,
+			"venta": true,
 			"foto": "moto.jpg",
 			"tags": [ "lifestyle", "motor"]
 		}
