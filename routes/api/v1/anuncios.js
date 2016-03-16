@@ -4,9 +4,9 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 let Anuncio = mongoose.model('Anuncio');
-//let auth = require('../../../lib/auth.js'); // variable de entorno
+let auth = require('../../../lib/auth.js'); // variable de entorno
 
-//router.use(auth()); // MIDDLEWARE de autenticación general
+router.use(auth()); // MIDDLEWARE de autenticación general
 
 /* Petición GET, sacar de la db CON AUTENTICACIÓN 
 router.get('/', auth('admin', 'pass'), function(req, res) {
@@ -27,12 +27,15 @@ router.get('/', function(req, res) {
 	//console.log(req.query);
 	let nombre = req.query.nombre || '';
 	let venta = req.query.venta || '';
-	let tags = req.query.tags || '';
+	let tags = req.query.tag || '';
+	let precio = req.query.precio || '';
 	let filters = {};
 	let sort = req.query.sort || 'nombre';
+	let start = parseInt(req.query.start) || 0;
+	let lim = parseInt(req.query.limit) || 0;
 	
 	if (nombre !== '') {
-		filters.nombre = nombre;
+		filters.nombre = new RegExp('^' + nombre, "i");
 	}
 	if (venta !== '') {
 		filters.venta = venta;
@@ -41,10 +44,27 @@ router.get('/', function(req, res) {
 		filters.tags = tags;
 	}
 	
-	console.log(sort);
-	console.log(filters);
+	let precioSplit = precio.split('-');
+	let patternRange = /\d-\d/;
+	let patternMin = /\d-/;
+	let patternMax = /-\d/;
 
-	Anuncio.list(sort, filters, function(err, rows) {
+	if (patternRange.test(precio)) {
+		filters.precio = {$gt: precioSplit[0], $lt: precioSplit[1]};
+	} else if (patternMin.test(precio)) {
+		filters.precio = {$gt: precioSplit[0]};
+	} else if (patternMax.test(precio)) {
+		filters.precio = {$lt: precioSplit[1]};
+	} else if (precio !== '') {
+		filters.precio = precio;
+	}
+
+	console.log('filtros:', filters);
+	console.log('sort:', sort);
+	console.log('start:', start);
+	console.log('lim:', lim);
+
+	Anuncio.list(filters, sort, start, lim, function(err, rows) {
 		if (err) {
 			return res.json({ result: false, error: err });
 		}
