@@ -1,16 +1,23 @@
 # NODEPOP
+
 API que dará servicio a una app de venta de artículos de segunda mano, llamada Nodepop (nombre interno). Esta app tiene versión iOS y Android y se está desarrollando actualmente. La pantalla principal de la app muestra una lista de anuncios y permite tanto buscar como poner filtros por varios criterios.
 
-## Primeros pasos
-* Descargar repositorio
-* Configurar paquetes de node: `$ npm install`
-* Cargar datos de muestra: `$ npm run instal-db`
+## Changelog
+
+### v.0.1.0 - 2016-03-16
+
+* Funcionalidad básica definida por el cliente
+* Modelos de anuncios y usuarios con sus controladores que incluyen los métodos GET, POST, PUT y DELETE
+* Búsqueda de anuncios con filtros y método para hallar los tags en la base de datos
+* Autenticación de usuarios con hash en las contraseñas
 
 ## Arrancar API
+
 * Arrancamos la base de datos Mongo
 * Arrancamos la api `$ nodemon` con nodemon automatiza la recarga cuando modificamos y guardamos algún archivo
 
 ## Búsqueda de resultados
+
 * Para obtener una lista de los anuncios existentes en la base de datos llamamos a la url:
 [Anuncios](http://localhost:3000/apiv1/anuncios)
 
