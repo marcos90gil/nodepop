@@ -1,29 +1,14 @@
 'use strict';
 
+/* jshint node: true */
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 let Usuario = mongoose.model('Usuario');
-//let auth = require('../../../lib/auth.js'); // variable de entorno
-
-//router.use(auth('admin', 'pass')); // MIDDLEWARE de autenticación general
-
-/* Petición GET, sacar de la db CON AUTENTICACIÓN 
-router.get('/', auth('admin', 'pass'), function(req, res) {
-	
-	let sort = req.query.sort || 'name';
-	
-	Usuario.list(sort, function(err, rows) {
-		if (err) {
-			return res.json({ result: false, error: err });
-		}
-		return res.json({ result: true, rows: rows });	
-	});	
-});
-*/
 
 /* Petición GET con renderizado de vista */
-router.get('/view', function(req, res, next) {
+router.get('/view', function(req, res) {
 	
 	Usuario.list({}, function(err, rows) {
 		// cuando estén disponibles mando la vista
@@ -45,7 +30,22 @@ router.get('/', function(req, res) {
 	});	
 });
 
-/* Petición POST, añadir un item */
+/**
+ * @api {post} apiv1/usuarios Crear nuevo usuario
+ * @apiVersion 0.1.0
+ * @apiName PostUsuario
+ * @apiGroup Usuarios
+ * @apiPermission none
+ *
+ * @apiDescription Creación de un usuario por el método post, al no tener interfaz se recomienda utilizar la herramienta POSTMAN con los campos en 'urlencoded'. Cuando se añade un usuario con exito se muestra como respuesta el usuario en un objeto json.
+ *
+ * @apiParam {String} username Nombre del usuario.
+ * @apiParam {String} email Email del usuario.
+ * @apiParam {String} password Contraseña del usuario.
+ *
+ * @apiSuccess {String} id         Guarda usuario en la base de datos con su id correspondiente.
+ *
+ */
 router.post('/', function(req, res) {
 
 	// Instanciamos objeto en memoria
