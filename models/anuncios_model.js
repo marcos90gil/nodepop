@@ -1,6 +1,7 @@
 'use strict';
 
-let conn = require('../lib/connectMongoose.js');
+/* jshint node: true */
+
 let mongoose = require('mongoose');
 
 // Creo el esquema
