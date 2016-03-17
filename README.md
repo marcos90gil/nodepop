@@ -13,8 +13,8 @@ API que dará servicio a una app de venta de artículos de segunda mano, llamada
 
 ## Arrancar API
 
-* Arrancamos la base de datos Mongo
-* Arrancamos la api `$ nodemon` con nodemon automatiza la recarga cuando modificamos y guardamos algún archivo
+* Base de datos: Arrancamos una base de datos Mongo para conectarla con nuestra app. La conexión se realiza en el archivo ./lib/connectMongoose.js, se está utilizando la librería mongoose para trabajar con mongo. Por defecto esta conexión se realiza en el puerto 27017. Cargamos datos en la base de datos para poder empezar a trabajar en una consola dentro de la carpeta del proyecto introducimos `$ npm run initial-db`.
+* Servidor: En una consola dentro de la carpeta del proyecto introducimos `$ nodemon` con nodemon se lanza el servidor en el puerto 3000 y se automatiza su recarga cuando modificamos y guardamos algún archivo.
 
 ## Búsqueda de resultados
 
