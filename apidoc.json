@@ -1,0 +1,19 @@
+{
+    "name": "nodepop",
+    "version": "0.1.0",
+    "description": "API creada con node como práctica del programa BABELCMP.JS. El enunciado de la práctica representa un briefing de un cliente con la siguiente introducción: API que dará servicio a una app de venta de artículos de segunda mano, llamada Nodepop (nombre interno). Esta app tiene versión iOS y Android y se está desarrollando actualmente. La pantalla principal de la app muestra una lista de anuncios y permite tanto buscar como poner filtros por varios criterios.",
+    "title": "Documentación de la api nodepop",
+    "url": "http://localhost:3000/",
+    "order": [
+        "PostUsuario",
+        "PostAnuncio",
+        "PutAnuncio",
+        "DeleteAnuncio",
+        "GetTags",
+        "GetAnuncio"
+    ],
+    "template": {
+        "withCompare": false,
+        "withGenerator": false
+    }
+}

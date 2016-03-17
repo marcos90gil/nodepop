@@ -4,28 +4,28 @@
 			"nombre": "Bicicleta",
 			"precio": 230.15,
 			"venta": true,
-			"foto": "bici.jpg",
+			"foto": "bici.png",
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
 			"nombre": "Bicicleta",
 			"precio": 845,
 			"venta": true,
-			"foto": "bici2.jpg",
+			"foto": "bici2.png",
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
 			"nombre": "Bicicleta",
 			"precio": 1200,
 			"venta": true,
-			"foto": "bici3.jpg",
+			"foto": "bici3.png",
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
 			"nombre": "Bicicleta",
 			"precio": 210,
 			"venta": false,
-			"foto": "bici4.jpg",
+			"foto": "bici4.png",
 			"tags": [ "lifestyle", "motor"]
 		},
 		{
@@ -39,7 +39,7 @@
 			"nombre": "iPhone 3GS",
 			"precio": 50.00,
 			"venta": false,
-			"foto": "iphone3gs.png",
+			"foto": "iphone3gs.jpg",
 			"tags": [ "lifestyle", "mobile"]
 		},
 		{
