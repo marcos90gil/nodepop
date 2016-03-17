@@ -11,6 +11,10 @@ API que dará servicio a una app de venta de artículos de segunda mano, llamada
 * Búsqueda de anuncios con filtros y método para hallar los tags en la base de datos
 * Autenticación de usuarios con hash en las contraseñas
 
+### v.0.1.1 - 2016-03-17
+
+* Añadida documentación con apidocs y favicon
+
 ## Instalación de la API
 
 * Descargar o clonar el código de github
