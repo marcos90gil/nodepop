@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "initial-db": "node ./bin/install_db.js"
+    "initial-db": "node ./bin/install_db.js",
+    "initial-db-promises": "node ./bin/install_db2.js"
   },
   "dependencies": {
     "apidoc": "^0.15.1",

@@ -33,7 +33,7 @@ Anuncio.remove(function(err) {
                 if (err) {
                     return console.log('ERROR', err);
                 }
-                return console.log('anuncios creados', newRow);             
+                return console.log('ANUNCIOS CREADOS', newRow);             
             });
 
         }
@@ -59,13 +59,13 @@ Usuario.remove(function(err) {
 
         for (let i = 0; i < pack.usuarios.length; i++) {
             
-            let ususario = new Usuario(pack.usuarios[i]);
+            let usuario = new Usuario(pack.usuarios[i]);
             
-            ususario.save(function(err, newRow) {
+            usuario.save(function(err, newRow) {
                 if (err) {
                     return console.log('ERROR', err);
                 }
-                return console.log('usuarios creados', newRow);             
+                return console.log('USUARIOS CREADOS', newRow);             
             });
 
         }
