@@ -97,8 +97,10 @@ function saveUsuarios(element) {
     });
 }
 
+console.log('Empezamos');
 deleteDB(Anuncio)
     .then(function() {
+        console.log('borrar anuncios');
         return readFilePromise('./anuncios.json');
     })
     .then(saveAnuncios)

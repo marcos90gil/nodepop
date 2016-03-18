@@ -9,9 +9,10 @@ let Anuncio = mongoose.model('Anuncio');
 let Usuario = mongoose.model('Usuario');
 let fs = require('fs');
 
+console.log('Arranca');
 // Inicialización de anuncios
 Anuncio.remove(function(err) {
-
+    console.log('entro en eliminar anuncio');
     if (err) {
         return console.log('ERROR', err);
     }

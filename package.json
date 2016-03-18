@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
+    "start-multicore": "node ./bin/www-multi",
     "initial-db": "node ./bin/install_db.js",
     "initial-db-promises": "node ./bin/install_db2.js"
   },
