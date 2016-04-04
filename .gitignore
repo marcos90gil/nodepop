@@ -1,6 +1,9 @@
 # apidocs
 public/doc
 
+# jshint
+.jshintrc
+
 # Logs
 logs
 *.log
